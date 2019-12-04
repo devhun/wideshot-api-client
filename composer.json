@@ -1,6 +1,15 @@
 {
     "name": "devhun/wideshot-api-client",
     "description": "PHP API client for wideshot.co.kr (SEJONG Telecom Service)",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/devhun/wideshot-api-client",
+    "authors": [
+        {
+            "name": "devhun",
+            "email": "i@huns.kr"
+        }
+    ],
     "require": {
         "php": ">=7.1"
     },
@@ -8,11 +17,9 @@
         "guzzlehttp/guzzle": "^6.4",
         "phpunit/phpunit": "^8.4"
     },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "devhun",
-            "email": "i@huns.kr"
+    "autoload": {
+        "psr-4": {
+            "Wideshot\\": "src"
         }
-    ]
+    }
 }

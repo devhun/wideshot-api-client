@@ -107,4 +107,10 @@ modules.xml
 # Ignore all local history of files
 .history
 
+# Ignore Library composer.lock
+composer.lock
+
+# Ignore phpunit
+.phpunit.result*
+
 # End of https://www.gitignore.io/api/composer,phpstorm+all,visualstudiocode
