@@ -10,7 +10,7 @@
 Open a shell, `cd` to your poject and type:
 
 ```sh
-composer require malc0mn/vultr-api-client
+composer require devhun/wideshot-api-client
 ```
 
 or edit composer.json and add:
@@ -58,7 +58,7 @@ $client = new WideshotClient(
     new CurlAdapter('your-api-key')
 );
 
-$result = $client->metaData()->getAccountInfo();
+$result = $client->result()->all();
 
 var_export($result);
 ```
