@@ -1,7 +1,7 @@
 # PHP API client for api.wideshot.co.kr
 
 [![Build Status](https://travis-ci.org/devhun/wideshot-api-client.svg?branch=master)](https://travis-ci.org/devhun/wideshot-api-client)
-[![Latest Stable Version](https://poser.pugx.org/devhun/wideshot-api-client/v/stable)](https://packagist.org/packages/devhun/wideshot-api-client)
+[![Latest Stable Version](https://poser.pugx.org/devhun/wideshot-api-client/version)](https://packagist.org/packages/devhun/wideshot-api-client)
 [![Total Downloads](https://poser.pugx.org/devhun/wideshot-api-client/downloads)](https://packagist.org/packages/devhun/wideshot-api-client)
 [![License](https://poser.pugx.org/devhun/wideshot-api-client/license)](https://packagist.org/packages/devhun/wideshot-api-client)
 
