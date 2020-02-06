@@ -1,11 +1,11 @@
 <?php
 
 /**
- * whideshot.co.kr PHP API Client
+ * whideshot.co.kr PHP API Client.
  *
- * @package DevHun\Wideshot
  * @author  https://github.com/devhun
  * @license https://opensource.org/licenses/mit-license.php MIT
+ *
  * @see     https://github.com/devhun/wideshot-api-client
  */
 
@@ -21,7 +21,7 @@ class Result extends AbstractApiCall
     public function single($sendCode)
     {
         $args = [
-            'sendCode' => $sendCode
+            'sendCode' => $sendCode,
         ];
 
         return $this->adapter->get('message/result', $args);

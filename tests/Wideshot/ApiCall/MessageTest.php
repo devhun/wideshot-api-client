@@ -4,8 +4,8 @@ namespace DevHun\Wideshot\Tests;
 
 use DevHun\Wideshot\Adapter\CurlAdapter;
 use DevHun\Wideshot\Adapter\GuzzleHttpAdapter;
-use PHPUnit\Framework\TestCase;
 use DevHun\Wideshot\WideshotClient;
+use PHPUnit\Framework\TestCase;
 
 class MessageTest extends TestCase
 {
@@ -16,10 +16,10 @@ class MessageTest extends TestCase
 
     protected function setUp(): void
     {
-        $adapterClass = 'DevHun\\Wideshot\\Adapter\\' . getenv('ADAPTER');
+        $adapterClass = 'DevHun\\Wideshot\\Adapter\\'.getenv('ADAPTER');
 
         /**
-         * @var $adapter CurlAdapter|GuzzleHttpAdapter
+         * @var CurlAdapter|GuzzleHttpAdapter
          */
         $adapter = new $adapterClass(getenv('APITOKEN'));
         $adapter->setEndpoint(getenv('ENDPOINT'));
@@ -83,9 +83,9 @@ class MessageTest extends TestCase
             'TEST TITLE',
             false,
             [
-                __DIR__ . '/images/1.jpg',
-                __DIR__ . '/images/2.jpg',
-                __DIR__ . '/images/3.jpg'
+                __DIR__.'/images/1.jpg',
+                __DIR__.'/images/2.jpg',
+                __DIR__.'/images/3.jpg',
             ]
         );
 

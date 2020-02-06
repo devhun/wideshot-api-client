@@ -1,29 +1,29 @@
 <?php
 
 /**
- * whideshot.co.kr PHP API Client
+ * whideshot.co.kr PHP API Client.
  *
- * @package DevHun\Wideshot
  * @author  https://github.com/devhun
  * @license https://opensource.org/licenses/mit-license.php MIT
+ *
  * @see     https://github.com/devhun/wideshot-api-client
  */
 
 namespace DevHun\Wideshot\Adapter;
 
+use DevHun\Wideshot\WideshotClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Response;
-use DevHun\Wideshot\WideshotClient;
 
 class GuzzleHttpAdapter extends AbstractAdapter
 {
     /**
-     * API Token
+     * API Token.
      *
      * @see https://www.wideshot.co.kr/mypage/senderList.do
      *
-     * @var string $apiToken Wideshot API token
+     * @var string Wideshot API token
      */
     protected $apiToken;
 
@@ -61,18 +61,18 @@ class GuzzleHttpAdapter extends AbstractAdapter
 
         $config = [
             'base_uri' => $endpoint,
-            'headers' => [
-                'Accept' => 'application/json',
-                'User-Agent' => sprintf('%s v%s (%s)',WideshotClient::AGENT,WideshotClient::VERSION, 'https://github.com/devhun/wideshot-api-client'),
-                'sejongApiKey' => $this->apiToken
-            ]
+            'headers'  => [
+                'Accept'       => 'application/json',
+                'User-Agent'   => sprintf('%s v%s (%s)', WideshotClient::AGENT, WideshotClient::VERSION, 'https://github.com/devhun/wideshot-api-client'),
+                'sejongApiKey' => $this->apiToken,
+            ],
         ];
 
         return new Client($config);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setEndpoint($endpoint)
     {
@@ -80,7 +80,7 @@ class GuzzleHttpAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function get($url, array $args = [])
     {
@@ -95,6 +95,7 @@ class GuzzleHttpAdapter extends AbstractAdapter
             $this->response = $this->client->get($url, $options);
         } catch (RequestException $e) {
             $this->response = $e->getResponse();
+
             return $this->handleError();
         }
 
@@ -102,7 +103,7 @@ class GuzzleHttpAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function post($url, array $args, array $files = [])
     {
@@ -110,17 +111,17 @@ class GuzzleHttpAdapter extends AbstractAdapter
             $postData = [];
             foreach ($args as $key => $val) {
                 array_push($postData, [
-                    'name' => $key,
-                    'contents' => $val
+                    'name'     => $key,
+                    'contents' => $val,
                 ]);
             }
             $postMode = 'multipart';
 
             foreach ($files as $key => $val) {
                 array_push($postData, [
-                    'name' => $key,
+                    'name'     => $key,
                     'contents' => fopen($val, 'r'),
-                    'filename' => basename($val)
+                    'filename' => basename($val),
                 ]);
             }
         } else {

@@ -2,8 +2,8 @@
 
 namespace DevHun\Wideshot\Tests;
 
-use PHPUnit\Framework\TestCase;
 use DevHun\Wideshot\Adapter\GuzzleHttpAdapter;
+use PHPUnit\Framework\TestCase;
 
 class GuzzleHttpAdapterTest extends TestCase
 {
@@ -12,7 +12,7 @@ class GuzzleHttpAdapterTest extends TestCase
      */
     protected $client;
 
-    protected function setUp() : void
+    protected function setUp(): void
     {
         $this->client = new GuzzleHttpAdapter('EXAMPLE');
     }

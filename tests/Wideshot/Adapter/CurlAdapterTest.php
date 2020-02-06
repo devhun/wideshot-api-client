@@ -1,10 +1,9 @@
 <?php
 
-
 namespace DevHun\Wideshot\Tests;
 
-use PHPUnit\Framework\TestCase;
 use DevHun\Wideshot\Adapter\CurlAdapter;
+use PHPUnit\Framework\TestCase;
 
 class CurlAdapterTest extends TestCase
 {
@@ -13,7 +12,7 @@ class CurlAdapterTest extends TestCase
      */
     protected $client;
 
-    protected function setUp() : void
+    protected function setUp(): void
     {
         $this->client = new CurlAdapter('EXAMPLE');
     }
