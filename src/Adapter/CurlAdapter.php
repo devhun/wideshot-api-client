@@ -1,11 +1,11 @@
 <?php
 
 /**
- * whideshot.co.kr PHP API Client
+ * whideshot.co.kr PHP API Client.
  *
- * @package DevHun\Wideshot
  * @author  https://github.com/devhun
  * @license https://opensource.org/licenses/mit-license.php MIT
+ *
  * @see     https://github.com/devhun/wideshot-api-client
  */
 
@@ -21,16 +21,16 @@ class CurlAdapter extends AbstractAdapter
     protected $endpoint;
 
     /**
-     * API Token
+     * API Token.
      *
      * @see https://www.wideshot.co.kr/mypage/senderList.do
      *
-     * @var string $apiToken Wideshot API token
+     * @var string Wideshot API token
      */
     protected $apiToken;
 
     /**
-     * The API responseCode
+     * The API responseCode.
      *
      * @var int
      */
@@ -45,7 +45,7 @@ class CurlAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setEndpoint($endpoint)
     {
@@ -53,7 +53,7 @@ class CurlAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function get($url, array $args = [])
     {
@@ -61,7 +61,7 @@ class CurlAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function post($url, array $args = [], array $files = [])
     {
@@ -70,24 +70,24 @@ class CurlAdapter extends AbstractAdapter
 
     protected function query($url, array $args, $requestType, array $files = [])
     {
-        $url = $this->endpoint . $url;
+        $url = $this->endpoint.$url;
 
         $defaults = [
-            CURLOPT_USERAGENT => sprintf('%s v%s (%s)', WideshotClient::AGENT, WideshotClient::VERSION, 'https://github.com/devhun/wideshot-api-client'),
-            CURLOPT_HEADER => false,
-            CURLOPT_VERBOSE => false,
+            CURLOPT_USERAGENT      => sprintf('%s v%s (%s)', WideshotClient::AGENT, WideshotClient::VERSION, 'https://github.com/devhun/wideshot-api-client'),
+            CURLOPT_HEADER         => false,
+            CURLOPT_VERBOSE        => false,
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_SSL_VERIFYHOST => false,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
             CURLOPT_FOLLOWLOCATION => false,
-            CURLOPT_FRESH_CONNECT => true,
+            CURLOPT_FRESH_CONNECT  => true,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FORBID_REUSE => true,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTPHEADER => [
+            CURLOPT_FORBID_REUSE   => true,
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_HTTPHEADER     => [
                 'Accept: application/json',
-                "sejongApiKey: $this->apiToken"
-            ]
+                "sejongApiKey: $this->apiToken",
+            ],
         ];
 
         switch ($requestType) {
@@ -111,7 +111,7 @@ class CurlAdapter extends AbstractAdapter
                 $defaults[CURLOPT_URL] = $url;
                 if (is_array($args)) {
                     $getData = http_build_query($args);
-                    $defaults[CURLOPT_URL] = $defaults[CURLOPT_URL] . '?' . $getData;
+                    $defaults[CURLOPT_URL] = $defaults[CURLOPT_URL].'?'.$getData;
                 }
                 break;
         }

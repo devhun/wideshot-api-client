@@ -1,11 +1,11 @@
 <?php
 
 /**
- * whideshot.co.kr PHP API Client
+ * whideshot.co.kr PHP API Client.
  *
- * @package DevHun\Wideshot
  * @author  https://github.com/devhun
  * @license https://opensource.org/licenses/mit-license.php MIT
+ *
  * @see     https://github.com/devhun/wideshot-api-client
  */
 
@@ -19,8 +19,8 @@ use DevHun\Wideshot\ApiCall\Result;
 class WideshotClient
 {
     const ENDPOINT = 'https://api.wideshot.co.kr/api/v1/';
-    const VERSION  = '1.0';
-    const AGENT    = 'whideshot.co.kr PHP API Client';
+    const VERSION = '1.0';
+    const AGENT = 'whideshot.co.kr PHP API Client';
 
     /**
      * @var AdapterInterface

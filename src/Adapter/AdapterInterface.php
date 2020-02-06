@@ -1,11 +1,11 @@
 <?php
 
 /**
- * whideshot.co.kr PHP API Client
+ * whideshot.co.kr PHP API Client.
  *
- * @package DevHun\Wideshot
  * @author  https://github.com/devhun
  * @license https://opensource.org/licenses/mit-license.php MIT
+ *
  * @see     https://github.com/devhun/wideshot-api-client
  */
 
@@ -21,7 +21,7 @@ interface AdapterInterface
     public function setEndpoint($endpoint);
 
     /**
-     * GET Method
+     * GET Method.
      *
      * @param string $url  API method to call
      * @param array  $args Argument to pass along with the method call.
@@ -31,14 +31,14 @@ interface AdapterInterface
     public function get($url, array $args = []);
 
     /**
-     * POST Method
+     * POST Method.
      *
-     * @param string $url  API method to call
-     * @param array $args  Argument to pass along with the method call.
-     * @param array $files File to pass along with the method call.
+     * @param string $url   API method to call
+     * @param array  $args  Argument to pass along with the method call.
+     * @param array  $files File to pass along with the method call.
      *
-     * @return array|integer when $getCode is set, the HTTP response code will
-     * be returned, otherwise an array of results will be returned.
+     * @return array|int when $getCode is set, the HTTP response code will
+     *                   be returned, otherwise an array of results will be returned.
      */
     public function post($url, array $args, array $files = []);
 }

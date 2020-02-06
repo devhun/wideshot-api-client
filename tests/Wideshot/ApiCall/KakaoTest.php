@@ -4,8 +4,8 @@ namespace DevHun\Wideshot\Tests;
 
 use DevHun\Wideshot\Adapter\CurlAdapter;
 use DevHun\Wideshot\Adapter\GuzzleHttpAdapter;
-use PHPUnit\Framework\TestCase;
 use DevHun\Wideshot\WideshotClient;
+use PHPUnit\Framework\TestCase;
 
 class KakaoTest extends TestCase
 {
@@ -16,10 +16,10 @@ class KakaoTest extends TestCase
 
     protected function setUp(): void
     {
-        $adapterClass = 'DevHun\\Wideshot\\Adapter\\' . getenv('ADAPTER');
+        $adapterClass = 'DevHun\\Wideshot\\Adapter\\'.getenv('ADAPTER');
 
         /**
-         * @var $adapter CurlAdapter|GuzzleHttpAdapter
+         * @var CurlAdapter|GuzzleHttpAdapter
          */
         $adapter = new $adapterClass(getenv('APITOKEN'));
         $adapter->setEndpoint(getenv('ENDPOINT'));
@@ -34,33 +34,33 @@ class KakaoTest extends TestCase
             'attachment' => [
                 'button' => [
                     [
-                        'name' => 'BUTTON1',
-                        'type' => 'WL',
-                        'url_pc' => 'http://localhost/',
-                        'url_mobile' => 'http://localhost/'
+                        'name'       => 'BUTTON1',
+                        'type'       => 'WL',
+                        'url_pc'     => 'http://localhost/',
+                        'url_mobile' => 'http://localhost/',
                     ],
                     [
-                        'name' => 'BUTTON2',
-                        'type' => 'AL',
+                        'name'           => 'BUTTON2',
+                        'type'           => 'AL',
                         'scheme_android' => 'android://',
-                        'scheme_ios' => 'ios://',
-                        'url_mobile' => 'http://localhost/',
-                        'url_pc' => 'http://localhost'
+                        'scheme_ios'     => 'ios://',
+                        'url_mobile'     => 'http://localhost/',
+                        'url_pc'         => 'http://localhost',
                     ],
                     [
                         'name' => 'BUTTON3',
-                        'type' => 'BK'
+                        'type' => 'BK',
                     ],
                     [
                         'name' => 'BUTTON4',
-                        'type' => 'MD'
+                        'type' => 'MD',
                     ],
                     [
                         'name' => 'BUTTON5',
-                        'type' => 'DS'
-                    ]
-                ]
-            ]
+                        'type' => 'DS',
+                    ],
+                ],
+            ],
         ];
         $result = $this->client->kakao()->alimtalk(
             '@TEST-CHANNEL',
@@ -85,37 +85,37 @@ class KakaoTest extends TestCase
             'attachment' => [
                 'button' => [
                     [
-                        'name' => 'BUTTON1',
-                        'type' => 'WL',
-                        'url_pc' => 'http://localhost/',
-                        'url_mobile' => 'http://localhost/'
+                        'name'       => 'BUTTON1',
+                        'type'       => 'WL',
+                        'url_pc'     => 'http://localhost/',
+                        'url_mobile' => 'http://localhost/',
                     ],
                     [
-                        'name' => 'BUTTON2',
-                        'type' => 'AL',
+                        'name'           => 'BUTTON2',
+                        'type'           => 'AL',
                         'scheme_android' => 'android://',
-                        'scheme_ios' => 'ios://',
-                        'url_mobile' => 'http://localhost/',
-                        'url_pc' => 'http://localhost/'
+                        'scheme_ios'     => 'ios://',
+                        'url_mobile'     => 'http://localhost/',
+                        'url_pc'         => 'http://localhost/',
                     ],
                     [
                         'name' => 'BUTTON3',
-                        'type' => 'BK'
+                        'type' => 'BK',
                     ],
                     [
                         'name' => 'BUTTON4',
-                        'type' => 'MD'
+                        'type' => 'MD',
                     ],
                     [
                         'name' => 'BUTTON5',
-                        'type' => 'DS'
-                    ]
+                        'type' => 'DS',
+                    ],
                 ],
                 'image' => [
-                    'img_url' => '%s',
-                    'img_link' => 'http://localhost/'
-                ]
-            ]
+                    'img_url'  => '%s',
+                    'img_link' => 'http://localhost/',
+                ],
+            ],
         ];
         $result = $this->client->kakao()->friendtalk(
             '@TEST-CHANNEL',
@@ -141,37 +141,37 @@ class KakaoTest extends TestCase
             'attachment' => [
                 'button' => [
                     [
-                        'name' => 'BUTTON1',
-                        'type' => 'WL',
-                        'url_pc' => 'http://localhost/',
-                        'url_mobile' => 'http://localhost/'
+                        'name'       => 'BUTTON1',
+                        'type'       => 'WL',
+                        'url_pc'     => 'http://localhost/',
+                        'url_mobile' => 'http://localhost/',
                     ],
                     [
-                        'name' => 'BUTTON2',
-                        'type' => 'AL',
+                        'name'           => 'BUTTON2',
+                        'type'           => 'AL',
                         'scheme_android' => 'android://',
-                        'scheme_ios' => 'ios://',
-                        'url_mobile' => 'http://localhost/',
-                        'url_pc' => 'http://localhost/'
+                        'scheme_ios'     => 'ios://',
+                        'url_mobile'     => 'http://localhost/',
+                        'url_pc'         => 'http://localhost/',
                     ],
                     [
                         'name' => 'BUTTON3',
-                        'type' => 'BK'
+                        'type' => 'BK',
                     ],
                     [
                         'name' => 'BUTTON4',
-                        'type' => 'MD'
+                        'type' => 'MD',
                     ],
                     [
                         'name' => 'BUTTON5',
-                        'type' => 'DS'
-                    ]
+                        'type' => 'DS',
+                    ],
                 ],
                 'image' => [
-                    'img_url' => 'http://localhost/1.jpg',
-                    'img_link' => 'http://localhost/'
-                ]
-            ]
+                    'img_url'  => 'http://localhost/1.jpg',
+                    'img_link' => 'http://localhost/',
+                ],
+            ],
         ];
         $result = $this->client->kakao()->friendtalk(
             '@TEST-CHANNEL',

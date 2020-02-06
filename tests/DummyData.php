@@ -40,7 +40,7 @@ class DummyData
                 {"resultCode": ""},
                 {"resultCode": ""}
             ]
-        }'
+        }',
     ];
 
     public function getResponse($url, array $args)
