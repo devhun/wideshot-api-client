@@ -5,8 +5,7 @@
  *
  * Dummy API endpoint to allow actual adapter tests but with dummy data.
  *
- * @package Wideshot
- * @version 1.0
+ * @package DevHun\Wideshot
  * @author  https://github.com/devhun
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see     https://github.com/devhun/wideshot-api-client
@@ -15,7 +14,7 @@
 require_once 'DummyData.php';
 
 // Out fake 'content store'
-$jsonData = new \Wideshot\Tests\DummyData();
+$jsonData = new DevHun\Wideshot\Tests\DummyData();
 
 // Grab requested url.
 $url = ltrim($_SERVER['PATH_INFO'], '/');

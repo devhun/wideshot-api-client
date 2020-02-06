@@ -1,6 +1,6 @@
 <?php
 
-namespace Wideshot\Tests;
+namespace DevHun\Wideshot\Tests;
 
 class DummyData
 {

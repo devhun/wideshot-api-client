@@ -1,9 +1,9 @@
 <?php
 
-namespace Wideshot\Tests;
+namespace DevHun\Wideshot\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Wideshot\Adapter\GuzzleHttpAdapter;
+use DevHun\Wideshot\Adapter\GuzzleHttpAdapter;
 
 class GuzzleHttpAdapterTest extends TestCase
 {
@@ -19,6 +19,6 @@ class GuzzleHttpAdapterTest extends TestCase
 
     public function testConstruct()
     {
-        $this->assertInstanceOf('Wideshot\\Adapter\\GuzzleHttpAdapter', $this->client);
+        $this->assertInstanceOf('DevHun\\Wideshot\\Adapter\\GuzzleHttpAdapter', $this->client);
     }
 }

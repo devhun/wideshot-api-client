@@ -3,17 +3,16 @@
 /**
  * whideshot.co.kr PHP API Client
  *
- * @package Wideshot
- * @version 1.0
+ * @package DevHun\Wideshot
  * @author  https://github.com/devhun
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see     https://github.com/devhun/wideshot-api-client
  */
 
-namespace Wideshot\Adapter;
+namespace DevHun\Wideshot\Adapter;
 
 use GuzzleHttp\Exception\RequestException;
-use Wideshot\Exception\ApiException;
+use DevHun\Wideshot\Exception\ApiException;
 
 abstract class AbstractAdapter implements AdapterInterface
 {

@@ -1,21 +1,26 @@
 <?php
 
-namespace Wideshot\Tests;
+namespace DevHun\Wideshot\Tests;
 
+use DevHun\Wideshot\Adapter\CurlAdapter;
+use DevHun\Wideshot\Adapter\GuzzleHttpAdapter;
 use PHPUnit\Framework\TestCase;
-use Wideshot\WideshotClient;
+use DevHun\Wideshot\WideshotClient;
 
 class WideshotClientTest extends TestCase
 {
     public function testConstruct()
     {
-        $adapterClass = 'WideShot\\Adapter\\' . getenv('ADAPTER');
+        $adapterClass = 'DevHun\\WideShot\\Adapter\\' . getenv('ADAPTER');
 
+        /**
+         * @var $adapter CurlAdapter|GuzzleHttpAdapter
+         */
         $adapter = new $adapterClass(getenv('APITOKEN'));
         $adapter->setEndpoint(getenv('ENDPOINT'));
 
         $client = new WideshotClient($adapter);
 
-        $this->assertInstanceOf('Wideshot\\WideshotClient', $client);
+        $this->assertInstanceOf('DevHun\\Wideshot\\WideshotClient', $client);
     }
 }

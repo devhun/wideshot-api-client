@@ -3,19 +3,18 @@
 /**
  * whideshot.co.kr PHP API Client
  *
- * @package Wideshot
- * @version 1.0
+ * @package DevHun\Wideshot
  * @author  https://github.com/devhun
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see     https://github.com/devhun/wideshot-api-client
  */
 
-namespace Wideshot;
+namespace DevHun\Wideshot;
 
-use Wideshot\Adapter\AdapterInterface;
-use Wideshot\ApiCall\Kakao;
-use Wideshot\ApiCall\Message;
-use Wideshot\ApiCall\Result;
+use DevHun\Wideshot\Adapter\AdapterInterface;
+use DevHun\Wideshot\ApiCall\Kakao;
+use DevHun\Wideshot\ApiCall\Message;
+use DevHun\Wideshot\ApiCall\Result;
 
 class WideshotClient
 {

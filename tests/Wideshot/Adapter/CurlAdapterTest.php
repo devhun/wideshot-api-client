@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Wideshot\Tests;
+namespace DevHun\Wideshot\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Wideshot\Adapter\CurlAdapter;
+use DevHun\Wideshot\Adapter\CurlAdapter;
 
 class CurlAdapterTest extends TestCase
 {
@@ -20,6 +20,6 @@ class CurlAdapterTest extends TestCase
 
     public function testConstruct()
     {
-        $this->assertInstanceOf('Wideshot\\Adapter\\CurlAdapter', $this->client);
+        $this->assertInstanceOf('DevHun\\Wideshot\\Adapter\\CurlAdapter', $this->client);
     }
 }

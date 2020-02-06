@@ -1,9 +1,11 @@
 <?php
 
-namespace Wideshot\Tests;
+namespace DevHun\Wideshot\Tests;
 
+use DevHun\Wideshot\Adapter\CurlAdapter;
+use DevHun\Wideshot\Adapter\GuzzleHttpAdapter;
 use PHPUnit\Framework\TestCase;
-use Wideshot\WideshotClient;
+use DevHun\Wideshot\WideshotClient;
 
 class KakaoTest extends TestCase
 {
@@ -14,8 +16,11 @@ class KakaoTest extends TestCase
 
     protected function setUp(): void
     {
-        $adapterClass = 'Wideshot\\Adapter\\' . getenv('ADAPTER');
+        $adapterClass = 'DevHun\\Wideshot\\Adapter\\' . getenv('ADAPTER');
 
+        /**
+         * @var $adapter CurlAdapter|GuzzleHttpAdapter
+         */
         $adapter = new $adapterClass(getenv('APITOKEN'));
         $adapter->setEndpoint(getenv('ENDPOINT'));
 
