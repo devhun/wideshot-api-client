@@ -26,7 +26,7 @@ class Kakao extends AbstractApiCall
         if (!empty($title)) {
             $args['title'] = $title;
         }
-        if (!empty($title)) {
+        if (!empty($attachment)) {
             $args['attachment'] = $attachment;
         }
 
